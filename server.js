@@ -1,4 +1,3 @@
-require('dotenv').config();
 var express = require("express");
 var app = express();
 var session = require("express-session");
@@ -8,7 +7,6 @@ var cookieparser = require("cookie-parser");
 var createApis = require("./Apis/userApi");
 var dbconnection = require("./dbconnection/dbconnection");
 var path = require('path')
-const passport = require('passport');
 
 app.use(express.json())
 app.use(express.static(__dirname + '/frontend/dist'));
@@ -18,17 +16,13 @@ app.use(
     secret: "secret"
   })
 );
-app.use(cors());
-
-app.use(passport.initialize());
-app.use(passport.session());
-require('./config/passport')(passport);
+app.use(cors({credentials: true}));
 
 app.use(cookieparser());
 dbconnection();
 createApis(app);
 
-/*function Authenticate(req, resp, next) {
+function Authenticate(req, resp, next) {
   if (req.url === "/signup" || req.url === "/signin") {
 next()
     
@@ -43,7 +37,7 @@ next()
   }
 }
 
-app.use(Authenticate);*/
+app.use(Authenticate);
 
 
 app.get('/', (req, res) => {
