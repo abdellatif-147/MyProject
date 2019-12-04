@@ -7,7 +7,7 @@ var cookieparser = require("cookie-parser");
 var createApis = require("./Apis/userApi");
 var dbconnection = require("./dbconnection/dbconnection");
 var path = require('path')
-var port = process.env.PORT || 4000
+
 
 app.use(express.static(__dirname + '/frontend/dist'));
 app.use(
@@ -46,6 +46,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'frontend/dist/index.html'));
 });
 
-app.listen(port, function(){
+app.listen(process.env.PORT || 4000, function(){
   console.log('Your node js server is running');
 });
