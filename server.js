@@ -8,7 +8,6 @@ var createApis = require("./Apis/userApi");
 var dbconnection = require("./dbconnection/dbconnection");
 var path = require('path')
 
-app.use(express.json())
 app.use(express.static(__dirname + '/frontend/dist'));
 app.use(
   session({
@@ -19,6 +18,8 @@ app.use(
 app.use(cors({
 credentials: true
 }));
+app.use(express.json())
+
 
 app.use(cookieparser());
 dbconnection();
