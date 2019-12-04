@@ -7,12 +7,12 @@ export class UserService {
     return this.myHttpClient.post("/signup", data);
   }
   handlesignin(data) {
-    return this.myHttpClient.post("/signin", data , {withCredentials : true } );
+    return this.myHttpClient.post("https://back-new.herokuapp.com/signin", data , {withCredentials : true } );
   }
   getuserbyid(data) {
-    return this.myHttpClient.post('/getuserbyid', data , {withCredentials : true });
+    return this.myHttpClient.post('https://back-new.herokuapp.com/getuserbyid', data , {withCredentials : true });
   }
   logout(){
-    return this.myHttpClient.get('/logout',  { observe :'response' , withCredentials : true } )
+    return this.myHttpClient.get('https://back-new.herokuapp.com/logout',  { observe :'response' , withCredentials : true } )
   }
 } 
