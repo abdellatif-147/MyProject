@@ -16,7 +16,9 @@ app.use(
     secret: "secret"
   })
 );
-
+app.use(cors({
+credentials: true
+}));
 
 app.use(cookieparser());
 dbconnection();
