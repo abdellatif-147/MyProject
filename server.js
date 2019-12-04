@@ -7,9 +7,7 @@ var cookieparser = require("cookie-parser");
 var createApis = require("./Apis/userApi");
 var dbconnection = require("./dbconnection/dbconnection");
 var path = require('path')
-var compression = require('compression')
 var port = process.env.PORT || 4000
-app.use(compression());
 
 app.use(express.static(__dirname + '/frontend/dist'));
 app.use(
