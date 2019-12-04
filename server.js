@@ -9,12 +9,6 @@ var dbconnection = require("./dbconnection/dbconnection");
 var path = require('path')
 var port = process.env.PORT || 4000
 app.set('port', (port));
-app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS');
-  next();
-});
 
 app.use(express.static(__dirname + '/frontend/dist'));
 app.use(
@@ -23,9 +17,7 @@ app.use(
     secret: "secret",cookie: { maxAge: 60000 }
   })
 );
-app.use(cors({
-credentials: true
-}));
+app.use(cors());
 app.use(express.json())
 
 
