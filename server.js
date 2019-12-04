@@ -16,7 +16,7 @@ app.use(
     secret: "secret"
   })
 );
-app.use(cors({origin:'https://abdo-no1.herokuapp.com',
+app.use(cors({origin:'https://my-abdo.herokuapp.com',
 credentials: true
 }));
 
