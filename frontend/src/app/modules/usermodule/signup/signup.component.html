@@ -1,0 +1,35 @@
+
+<form style="margin: 0 auto; width:250px;">
+    <div class="field-group">
+        <span class="fa fa-user" aria-hidden="true"></span>
+        <div class="wthree-field">
+            <input  type="text"  placeholder="Username" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" >
+        </div>
+    </div>
+    <div class="field-group">
+        <span class="fa fa-lock" aria-hidden="true"></span>
+        <div class="wthree-field">
+            <input type="Password" placeholder="Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" >
+        </div>
+    </div>
+    <div class="field-group">
+            <span  aria-hidden="true"></span>
+            <div class="wthree-field">
+                <input  type="phone"  placeholder="phone" [(ngModel)]="phone" [ngModelOptions]="{standalone: true}" >
+            </div>
+        </div>
+        <div class="field-group">
+            <span aria-hidden="true"></span>
+            <div class="wthree-field">
+                <input  type="email"  placeholder="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" >
+            </div>
+        </div>
+        
+    <div class="wthree-field">
+        <button type="submit"  class="btn"   (click)="handlesignup()" >signup</button>
+<br/>
+<br/>
+
+<p style="text-align: center; color:white; font-family: initial; font-size:xx-large;">{{error}}</p>
+    </div>
+</form>

@@ -1,0 +1,12 @@
+
+<div *ngIf="userauthenticated" style="margin:0 auto; width: 250px; font-style: initial; color: lavenderblush;" >
+    <h1 style="font-size: xx-large; color:red; background-color: white;">welcome : {{user.username}} </h1>
+    <br/> 
+    <p>username : {{user.username}}</p>
+    <br/>
+    <p>phone : {{user.phone}}</p>
+    <br/>
+
+
+<button mat-raised-button color="accent" (click)="handlelogout()" style="margin:0 auto; width: 250px; ">logout</button>
+</div> 

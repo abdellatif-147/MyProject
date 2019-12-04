@@ -1,0 +1,23 @@
+    <form style="margin: 0 auto; width:250px;">
+        <div class="field-group">
+            <span class="fa fa-user" aria-hidden="true"></span>
+            <div class="wthree-field">
+                <input  type="text"  placeholder="Username" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" >
+            </div>
+        </div>
+        <div class="field-group">
+            <span class="fa fa-lock" aria-hidden="true"></span>
+            <div class="wthree-field">
+                <input type="Password" placeholder="Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" >
+            </div>
+        </div>
+        <div class="wthree-field">
+            <button type="submit"  class="btn"   (click)="handlesignin()" >signin</button>
+            <br/>
+            <br/>
+    
+            <p style="color: white; text-align: center; ">{{error}}</p>
+        </div>
+        
+
+    </form>

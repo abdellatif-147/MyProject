@@ -1,0 +1,6 @@
+<router-outlet></router-outlet>
+<div style="text-align: center; color: white;" *ngIf="userauthenticated">
+    <p>email : {{contactdata.email |uppercase }}</p>
+    <br/>
+    <p>phone : {{contactdata.phone  }}  </p>
+    <br/></div>
