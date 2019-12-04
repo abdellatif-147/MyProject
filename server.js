@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/frontend/dist'));
 app.use(
   session({
     genid: uuid,
-    secret: "secret"
+    secret: "secret",cookie: { maxAge: 60000 }
   })
 );
 app.use(cors({
