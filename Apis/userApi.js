@@ -1,6 +1,6 @@
 var usermodel = require("../models/usermodel");
 function createApis(app) {
-  app.post("/signup", async (req, resp) => {
+  app.post('/signup', async (req, resp) => {
     try {
       const { username, password, phone, email } = req.body;
       let user = new usermodel({
